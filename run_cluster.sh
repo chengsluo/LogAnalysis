@@ -8,8 +8,7 @@
 --executor-cores 6 \
 loganalysis_2.11-0.1.jar \
 /user/chengsluo/Log/ \
-/user/chengsluo/Data/ \
-/user/chengsluo/Res/
+/user/chengsluo/Data/
 
 
 
