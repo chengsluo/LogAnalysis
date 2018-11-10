@@ -1,0 +1,43 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.2.RELEASE'
+        springBootVersion = '2.0.2.RELEASE'
+        sparkScalaVersion = '2.11'
+        sparkCoreVersion = '2.3.0'
+        lombokVersion = '1.16.12'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'application'
+mainClassName = "com.chengsluo.log.spark.SparkRunner"
+
+group = 'com.chengsluo.log'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter')
+    compile("org.projectlombok:lombok:$lombokVersion")
+    compile("org.apache.spark:spark-core_${sparkScalaVersion}:${sparkCoreVersion}") {
+        exclude group: "org.log4j"
+    }
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
+    compile("org.apache.spark:spark-sql_${sparkScalaVersion}:${sparkCoreVersion}")
+    runtime('org.springframework.boot:spring-boot-devtools')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

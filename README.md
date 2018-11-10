@@ -1,52 +1,16 @@
-# LogAnalysis
+# 利用Spark Java API和Spring Boot进行简单的日志分析
 
-本项目利用Spark集群对海量日志进行分析
+## 功能
+1. 利用路由器日志进行用户网站访问统计；
+2. 利用WordCount提取门户网站的访问排名等；
 
-## 项目配置
+## 主要技术方案
+0. scala版本仅仅用来做测试用；
+1. 利用Java脚本对各个zip数据压缩包进行解压缩，并聚合压缩成效率更高的parquet格式;
+2. 利用Spark的Java API进行Map、Reduce等操作来获取信息；
 
-### 组件版本
-
-* hadoop:2.6.0
-* spark:2.2.1
-* scala:2.11.8
-
-### 集群大小
-
-Namenode:
-
-* 20GB,24cores
-
-Datanode×４:
-
-* 16GB,24cores
-
-
-## 本地运行调试
-
-```shell
-./run_local.sh
-```
-
-## 集群运行
-
-### 上传必要信息
-
-上传数据到HDFS,上传jar包和run_cluster.sh到master节点
-
-### 登录master节点，运行任务
-
-```shell
-./run_cluster.sh
-```
-
-注意:重复提交需要将结果文件夹清零
-
-```shell
-hadoop fs -rm -r /user/root/result/wordCount
-```
-
-### 查看结果
-
-```shell
-hadoop fs -get /user/root/result/wordCount
-```
+## 注意事项：
+0. 代码仅供参考，不保证能在任何用户的环境中跑起来；
+1. 代码中数据样例占用内存较大，下载时可能需要一定时间；
+2. SparkTask中结果会输出CSV文件中;
+3. 将CSV文件导入到数据库中，利用WebService给展示界面提供Web API；

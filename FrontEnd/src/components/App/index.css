@@ -1,0 +1,37 @@
+.trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.trigger:hover {
+    color: #1890ff;
+}
+
+.logo {
+    background: rgba(255, 255, 255, .2);
+    margin: 12px;
+}
+
+.title-text{
+    marginTop:30px;
+    color: rgba(30, 136, 229, 1);
+    font-family: Roboto;
+}
+
+.tab-form{
+    padding: 24px;
+    background: #fbfbfb;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+}
+.bread-crumb{
+    padding-left: 16px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background: #ccc;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+}

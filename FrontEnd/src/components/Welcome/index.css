@@ -1,0 +1,20 @@
+.title-text{
+    marginTop:30px;
+    color: rgba(30, 136, 229, 1);
+    font-family: Roboto;
+}
+
+.tab-form{
+    padding: 24px;
+    background: #fbfbfb;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+}
+.bread-crumb{
+    padding-left: 16px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background: #ccc;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+}
